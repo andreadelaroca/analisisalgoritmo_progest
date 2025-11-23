@@ -1,0 +1,15 @@
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\bin\Debug\net9.0\bubblesort.exe
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\bin\Debug\net9.0\bubblesort.deps.json
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\bin\Debug\net9.0\bubblesort.runtimeconfig.json
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\bin\Debug\net9.0\bubblesort.dll
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\bin\Debug\net9.0\bubblesort.pdb
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\bubblesort.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\bubblesort.AssemblyInfoInputs.cache
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\bubblesort.AssemblyInfo.cs
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\bubblesort.csproj.CoreCompileInputs.cache
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\bubblesort.sourcelink.json
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\bubblesort.dll
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\refint\bubblesort.dll
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\bubblesort.pdb
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\bubblesort.genruntimeconfig.cache
+C:\Users\minit\OneDrive\Desktop\IIS\analisisalgoritmos\bubblesort\obj\Debug\net9.0\ref\bubblesort.dll
