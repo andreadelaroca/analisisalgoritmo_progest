@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aleja\\OneDrive\\Escritorio\\analisisalgoritmo_progest\\quicksort\\quicksort.csproj": {}
+    "C:\\Users\\minit\\OneDrive\\Desktop\\IIS\\analisisalgoritmos\\quicksort\\quicksort.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aleja\\OneDrive\\Escritorio\\analisisalgoritmo_progest\\quicksort\\quicksort.csproj": {
+    "C:\\Users\\minit\\OneDrive\\Desktop\\IIS\\analisisalgoritmos\\quicksort\\quicksort.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aleja\\OneDrive\\Escritorio\\analisisalgoritmo_progest\\quicksort\\quicksort.csproj",
+        "projectUniqueName": "C:\\Users\\minit\\OneDrive\\Desktop\\IIS\\analisisalgoritmos\\quicksort\\quicksort.csproj",
         "projectName": "quicksort",
-        "projectPath": "C:\\Users\\aleja\\OneDrive\\Escritorio\\analisisalgoritmo_progest\\quicksort\\quicksort.csproj",
-        "packagesPath": "C:\\Users\\aleja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aleja\\OneDrive\\Escritorio\\analisisalgoritmo_progest\\quicksort\\obj\\",
+        "projectPath": "C:\\Users\\minit\\OneDrive\\Desktop\\IIS\\analisisalgoritmos\\quicksort\\quicksort.csproj",
+        "packagesPath": "C:\\Users\\minit\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\minit\\OneDrive\\Desktop\\IIS\\analisisalgoritmos\\quicksort\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\aleja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\minit\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

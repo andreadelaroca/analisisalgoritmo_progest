@@ -27,36 +27,66 @@ namespace BubbleSort
                 }
             }
 
-            // Generar arreglo aleatorio
-            var rand = new Random();
-            int[] array = Enumerable.Range(0, n).Select(_ => rand.Next(0, 1000)).ToArray();
+            // Ejecutar análisis para los tres casos del algoritmo Bubble Sort
+            // Mejor caso: arreglo ya ordenado (ascendente)
+            EjecutarCaso("Mejor caso (ordenado)", GenerarMejorCaso(n));
 
-            // Mostrar el arreglo sólo si es pequeño para no saturar el output
-            if (n <= 30)
+            // Caso promedio: arreglo aleatorio
+            EjecutarCaso("Caso promedio (aleatorio)", GenerarCasoPromedio(n));
+
+            // Peor caso: arreglo ordenado inversamente (descendente)
+            EjecutarCaso("Peor caso (inverso)", GenerarPeorCaso(n));
+        }
+
+        // Ejecuta Bubble Sort sobre un arreglo, muestra arreglo si es pequeño
+        // y reporta métricas útiles para el análisis del algoritmo.
+        static void EjecutarCaso(string titulo, int[] array)
+        {
+            Console.WriteLine($"\n=== {titulo} ===");
+
+            if (array.Length <= 30)
             {
                 Console.WriteLine("Arreglo inicial: " + string.Join(", ", array));
             }
 
-            // Ejecutar el ordenamiento y obtener métricas
             var (comparaciones, intercambios, tiempoMs) = BubbleSort(array);
-
-            // Verificar que quedó ordenado
             bool ordenado = Ordenado(array);
 
-            if (n <= 30)
+            if (array.Length <= 30)
             {
                 Console.WriteLine("Arreglo ordenado: " + string.Join(", ", array));
             }
 
-            // Mostrar métricas
-            Console.WriteLine($"Tamaño del arreglo: {n}");
+            Console.WriteLine($"Tamaño del arreglo: {array.Length}");
             Console.WriteLine($"Comparaciones: {comparaciones}");
             Console.WriteLine($"Intercambios: {intercambios}");
             Console.WriteLine($"Tiempo de ejecución: {tiempoMs} ms");
             Console.WriteLine($"¿Se ordenó correctamente?: {ordenado}");
         }
 
-        // Función BubbleSort, retorna las métricas para el análisis
+        // Genera el mejor caso para Bubble Sort: arreglo ya ordenado ascendente.
+        static int[] GenerarMejorCaso(int n)
+        {
+            // Ejemplo simple: 0, 1, 2, ..., n-1
+            return Enumerable.Range(0, n).ToArray();
+        }
+
+        // Genera un caso promedio: arreglo con valores aleatorios.
+        static int[] GenerarCasoPromedio(int n)
+        {
+            var rand = new Random();
+            return Enumerable.Range(0, n).Select(_ => rand.Next(0, 1000)).ToArray();
+        }
+
+        // Genera el peor caso: arreglo ordenado de forma descendente.
+        static int[] GenerarPeorCaso(int n)
+        {
+            // Ejemplo: n-1, n-2, ..., 0
+            return Enumerable.Range(0, n).Select(i => n - 1 - i).ToArray();
+        }
+
+        // Algoritmo Bubble Sort clásico sin "early-exit".
+        // Retorna las métricas para el análisis: comparaciones, intercambios, tiempo en ms.
         static (long comparaciones, long intercambios, long tiempoMs) BubbleSort(int[] arr)
         {
             int n = arr.Length;

@@ -27,36 +27,75 @@ namespace QuickSort
                 }
             }
 
-            // Generar arreglo aleatorio
-            var rand = new Random();
-            int[] array = Enumerable.Range(0, n).Select(_ => rand.Next(0, 1000)).ToArray();
+            // Ejecutar análisis de QuickSort para tres casos típicos
+            EjecutarCaso("Mejor caso (pivot ideal)", GenerarMejorCaso(n));
+            EjecutarCaso("Caso promedio (aleatorio)", GenerarCasoPromedio(n));
+            EjecutarCaso("Peor caso (ordenado/inverso con pivot extremo)", GenerarPeorCaso(n));
+        }
 
-            // Mostrar el arreglo sólo si es pequeño
-            if (n <= 30)
+        // Ejecuta QuickSort sobre el arreglo dado, imprime (si es pequeño)
+        // y muestra métricas para el análisis del algoritmo.
+        static void EjecutarCaso(string titulo, int[] array)
+        {
+            Console.WriteLine($"\n=== {titulo} ===");
+            if (array.Length <= 30)
             {
                 Console.WriteLine("Arreglo inicial: " + string.Join(", ", array));
             }
 
-            // Ejecutar QuickSort y obtener métricas
             var (comparaciones, intercambios, tiempoMs) = QuickSort(array);
-
-            // Verificar que quedó ordenado
             bool ordenado = Ordenado(array);
 
-            if (n <= 30)
+            if (array.Length <= 30)
             {
                 Console.WriteLine("Arreglo ordenado: " + string.Join(", ", array));
             }
 
-            // Mostrar métricas
-            Console.WriteLine($"Tamaño del arreglo: {n}");
+            Console.WriteLine($"Tamaño del arreglo: {array.Length}");
             Console.WriteLine($"Comparaciones: {comparaciones}");
             Console.WriteLine($"Intercambios: {intercambios}");
             Console.WriteLine($"Tiempo de ejecución: {tiempoMs} ms");
             Console.WriteLine($"¿Se ordenó correctamente?: {ordenado}");
         }
 
-        // Función QuickSort con métricas
+        // Genera el mejor caso para QuickSort con pivot final (a[high]) como en esta implementación.
+        // Aquí el mejor caso se logra si el pivot escoge particiones balanceadas: típicamente un arreglo aleatorio ya
+        // suele producir comportamiento promedio cercano al mejor; sin embargo, para un pivot fijo (último elemento),
+        // podemos construir un arreglo con el pivot en la mediana repetida por bloques para inducir particiones más parejas.
+        static int[] GenerarMejorCaso(int n)
+        {
+            if (n <= 1) return Enumerable.Range(0, n).ToArray();
+            // Aproximación práctica: arreglo aleatorio (suele dar particiones relativamente balanceadas)
+            // y aseguramos que el último elemento sea aproximadamente mediana.
+            var rand = new Random();
+            int[] arr = Enumerable.Range(0, n).Select(_ => rand.Next(0, 1000)).ToArray();
+            Array.Sort(arr); // ordenar
+            int median = arr[n / 2];
+            arr[n - 1] = median; // colocar mediana como pivot inicial
+            // mezclar parcialmente para no dejarlo totalmente ordenado
+            for (int i = 0; i < n - 2; i += 2)
+            {
+                (arr[i], arr[i + 1]) = (arr[i + 1], arr[i]);
+            }
+            return arr;
+        }
+
+        // Genera el caso promedio: arreglo aleatorio uniforme.
+        static int[] GenerarCasoPromedio(int n)
+        {
+            var rand = new Random();
+            return Enumerable.Range(0, n).Select(_ => rand.Next(0, 1000)).ToArray();
+        }
+
+        // Genera el peor caso para esta variante (pivot = último elemento):
+        // Arreglo ya ordenado ascendentemente o descendentemente, lo que causa particiones muy desbalanceadas O(n^2).
+        static int[] GenerarPeorCaso(int n)
+        {
+            // Usamos ascendente para que el pivot (último) siempre sea el mayor y deje subproblemas de tamaño n-1.
+            return Enumerable.Range(0, n).ToArray();
+        }
+
+        // QuickSort Lomuto (pivot = a[high]) con métricas de comparaciones e intercambios.
         static (long comparaciones, long intercambios, long tiempoMs) QuickSort(int[] arr)
         {
             long comparaciones = 0;
